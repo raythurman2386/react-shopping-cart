@@ -21,9 +21,11 @@ function App() {
   return (
     <div className='App'>
       <ProductContext.Consumer value={{ products, addItem }}>
-        <Navigation cart={cart} />
-        <Route exact path='/' component={Products} />
-        <Route path='/cart' component={ShoppingCart} />
+        <CartContext.Consumer value={cart}>
+          <Navigation />
+          <Route exact path='/' component={Products} />
+          <Route path='/cart' component={ShoppingCart} />
+        </CartContext.Consumer>
       </ProductContext.Consumer>
     </div>
   )
