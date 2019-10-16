@@ -7,7 +7,7 @@ import Navigation from './components/Navigation'
 import Products from './components/Products'
 import ShoppingCart from './components/ShoppingCart'
 import { ProductContext } from './contexts/ProductContext'
-import { CartContext } from './contexts/CartContext'
+import { CartContext } from './contexts'
 
 function App() {
   const [products] = useState(data)
