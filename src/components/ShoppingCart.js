@@ -4,7 +4,8 @@ import React, { useContext } from 'react'
 import Item from './ShoppingCartItem'
 import { CartContext } from '../contexts'
 
-const ShoppingCart = () => {
+const ShoppingCart = props => {
+  // console.log(props, 'cart')
   const { cart } = useContext(CartContext)
 
   const getCartTotal = () => {
