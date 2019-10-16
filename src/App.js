@@ -8,10 +8,11 @@ import Products from './components/Products'
 import ShoppingCart from './components/ShoppingCart'
 import { ProductContext } from './contexts'
 import { CartContext } from './contexts'
+import { useLocalStorage } from './useLocalStorage'
 
 function App() {
   const [products] = useState(data)
-  const [cart, setCart] = useState([])
+  const [cart, setCart] = useLocalStorage([])
 
   const addItem = item => {
     // add the given item to the cart

@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
-const useLocalStorage = initialValue => {
+export const useLocalStorage = initialValue => {
   const [storedCart, setStoredCart] = useState(() => {
     const item = window.localStorage.getItem('Cart')
     return item ? JSON.parse(item) : initialValue
@@ -12,16 +12,16 @@ const useLocalStorage = initialValue => {
     window.localStorage.setItem('Cart', JSON.stringify(updatedValue))
   }
 
-  const addItem = item => {
-    setCart([...storedCart, item])
-  }
+  // const addItem = item => {
+  //   setCart([...storedCart, item])
+  // }
 
-  const removeItem = (e, id) => {
-    e.preventDefault()
-    const newCart = storedCart.filter(item => item.id !== id)
+  // const removeItem = (e, id) => {
+  //   e.preventDefault()
+  //   const newCart = storedCart.filter(item => item.id !== id)
 
-    setCart(newCart)
-  }
+  //   setCart(newCart)
+  // }
 
-  return [storedCart, setCart, addItem, removeItem]
+  return [storedCart, setCart]
 }
