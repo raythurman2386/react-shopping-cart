@@ -10,7 +10,7 @@ import { ProductProvider } from './contexts'
 import { CartProvider } from './contexts'
 import { useLocalStorage } from './useLocalStorage'
 
-function App(props) {
+function App() {
   // console.log(props)
   const [products] = useState(data)
   const [cart, addItem, removeItem] = useLocalStorage([])
