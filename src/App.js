@@ -6,8 +6,8 @@ import data from './data'
 import Navigation from './components/Navigation'
 import Products from './components/Products'
 import ShoppingCart from './components/ShoppingCart'
-import { ProductContext } from './contexts'
-import { CartContext } from './contexts'
+import { ProductProvider } from './contexts'
+import { CartProvider } from './contexts'
 import { useLocalStorage } from './useLocalStorage'
 
 function App(props) {
@@ -17,13 +17,13 @@ function App(props) {
 
   return (
     <div className='App'>
-      <ProductContext.Provider value={{ products, addItem }}>
-        <CartContext.Provider value={{ cart, removeItem }}>
+      <ProductProvider value={{ products, addItem }}>
+        <CartProvider value={{ cart, removeItem }}>
           <Navigation />
           <Route exact path='/' component={Products} />
           <Route path='/cart' component={ShoppingCart} />
-        </CartContext.Provider>
-      </ProductContext.Provider>
+        </CartProvider>
+      </ProductProvider>
     </div>
   )
 }
