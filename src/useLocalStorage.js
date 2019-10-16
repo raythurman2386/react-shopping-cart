@@ -12,16 +12,16 @@ export const useLocalStorage = initialValue => {
     window.localStorage.setItem('Cart', JSON.stringify(updatedValue))
   }
 
-  // const addItem = item => {
-  //   setCart([...storedCart, item])
-  // }
+  const addItem = item => {
+    setCart([...storedCart, item])
+  }
 
-  // const removeItem = (e, id) => {
-  //   e.preventDefault()
-  //   const newCart = storedCart.filter(item => item.id !== id)
+  const removeItem = (e, id) => {
+    e.preventDefault()
+    const newCart = storedCart.filter(item => item.id !== id)
 
-  //   setCart(newCart)
-  // }
+    setCart(newCart)
+  }
 
-  return [storedCart, setCart]
+  return [storedCart, addItem, removeItem]
 }

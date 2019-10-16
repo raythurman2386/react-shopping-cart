@@ -12,18 +12,7 @@ import { useLocalStorage } from './useLocalStorage'
 
 function App() {
   const [products] = useState(data)
-  const [cart, setCart] = useLocalStorage([])
-
-  const addItem = item => {
-    // add the given item to the cart
-    setCart([...cart, item])
-  }
-
-  const removeItem = (e, id) => {
-    e.preventDefault()
-    const newCart = cart.filter(item => item.id !== id)
-    setCart(newCart)
-  }
+  const [cart, addItem, removeItem] = useLocalStorage([])
 
   return (
     <div className='App'>
