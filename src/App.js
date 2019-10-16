@@ -6,9 +6,9 @@ import data from './data'
 import Navigation from './components/Navigation'
 import Products from './components/Products'
 import ShoppingCart from './components/ShoppingCart'
-import { ProductProvider } from './contexts'
-import { CartProvider } from './contexts'
-import { useLocalStorage } from './useLocalStorage'
+import { ProductProvider } from './contexts/contexts'
+import { CartProvider } from './contexts/contexts'
+import { useLocalStorage } from './hooks/useLocalStorage'
 
 function App() {
   // console.log(props)
